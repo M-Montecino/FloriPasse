@@ -1,0 +1,242 @@
+{
+  "atracoes": [
+    {
+      "id": 1,
+      "nome": "Praia da Joaquina",
+      "descricao": "A Praia da Joaquina é uma das mais famosas de Florianópolis, conhecida por suas ondas fortes, campeonatos de surf e dunas ideais para sandboard.",
+      "imagens": [
+        "https://img.nsctotal.com.br/wp-content/uploads/2024/03/As-lendas-e-a-historia-real-da-mulher-que-da-nome-a-praia-de-Florianopolis-3.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIQXOyih8WC7AQHFJnCurbEv939BQsQY8v7w&s"
+      ],
+      "videos": [
+        "https://www.youtube.com/watch?v=2g1LDLxP_YA&pp=ygUdcHJhaWEgam9hcXVpbmEgZmxvcmlhbsOzcG9saXPSBwkJxQoBhyohjO8%3D"
+      ],
+      "funcionamento": {
+        "dias": "Todos os dias",
+        "horario": "Aberto 24h"
+      },
+      "endereco": {
+        "logradouro": "Av. Pref. Acácio Garibaldi São Thiago",
+        "bairro": "Joaquina",
+        "cidade": "Florianópolis",
+        "estado": "SC",
+        "cep": "88062-600"
+      },
+      "contato": {
+        "telefone": "+55 48 99999-0001",
+        "email": "contato@joaquina.tur.br",
+        "whatsapp": "+55 48 99999-0001"
+      },
+      "possuiReserva": false,
+      "favorito": false
+    },
+    {
+      "id": 2,
+      "nome": "Projeto Tamar Florianópolis",
+      "descricao": "O Projeto Tamar é um centro de conservação de tartarugas marinhas, oferecendo atividades educativas e contato com a fauna local.",
+      "imagens": [
+        "https://anfitrioesdealuguel.com.br/wp-content/uploads/2019/08/original-457e3ee0c6ba199adc1a192fa31dd85e.jpg",
+        "https://www.tamar.org.br/fotos_news/images/fundacao_projeto_tamar_abre_temp_03.jpg"
+      ],
+      "videos": [
+        "https://www.youtube.com/watch?v=i8izOWTFpYs&pp=ygUNcHJvamV0byB0YW1hcg%3D%3D"
+      ],
+      "funcionamento": {
+        "dias": "Terça a Domingo",
+        "horario": "10:00 às 17:00"
+      },
+      "endereco": {
+        "logradouro": "Rua Professor Ademir Francisco",
+        "bairro": "Barra da Lagoa",
+        "cidade": "Florianópolis",
+        "estado": "SC",
+        "cep": "88061-160"
+      },
+      "contato": {
+        "telefone": "+55 48 3236-2015",
+        "email": "floripa@tamar.org.br",
+        "whatsapp": "+55 48 99999-0002"
+      },
+      "possuiReserva": true,
+      "favorito": false
+    },
+    {
+      "id": 3,
+      "nome": "Fortaleza de São José da Ponta Grossa",
+      "descricao": "Construída no século XVIII, a fortaleza oferece uma vista incrível do mar e é um importante patrimônio histórico de Florianópolis.",
+      "imagens": [
+        "https://fortalezas.paginas.ufsc.br/files/2011/03/ponta_grossa_vista-geral-dois.jpg",
+        "https://luxuryhomefloripa.com/wp-content/uploads/2024/06/Fortaleza-Sao-Jose-da-Ponta-Grossa-1_banner.webp"
+      ],
+      "videos": [
+        "https://www.youtube.com/watch?v=977Z0iBSgXo&pp=ygUnRm9ydGFsZXphIGRlIFPDo28gSm9zw6kgZGEgUG9udGEgR3Jvc3Nh0gcJCcUKAYcqIYzv"
+      ],
+      "funcionamento": {
+        "dias": "Quarta a Segunda",
+        "horario": "09:00 às 18:00"
+      },
+      "endereco": {
+        "logradouro": "Rodovia Jornalista Manoel de Menezes",
+        "bairro": "Praia do Forte",
+        "cidade": "Florianópolis",
+        "estado": "SC",
+        "cep": "88056-700"
+      },
+      "contato": {
+        "telefone": "+55 48 3721-8302",
+        "email": "fortaleza@ufsc.br",
+        "whatsapp": "+55 48 99999-0003"
+      },
+      "possuiReserva": true,
+      "favorito": false
+    },
+    {
+      "id": 4,
+      "nome": "Lagoa da Conceição",
+      "descricao": "A Lagoa da Conceição é um dos principais cartões-postais de Florianópolis, conhecida por sua beleza natural, esportes aquáticos e vida noturna animada.",
+      "imagens": [
+        "https://ilhadamagiaonline.com.br/wp-content/uploads/2024/03/praias-perto-da-lagoa-da-conceicao.webp",
+        "https://floripalanchas.com/wp-content/uploads/elementor/thumbs/lagoa-qisrgd5ghiz1we5boqjklp7rse0h8ko7zg6sdn770g.jpg"
+      ],
+      "videos": [
+        "https://www.youtube.com/watch?v=92VQggWLvjc&pp=ygUjbGFnb2EgZGEgY29uY2Vpw6fDo28gZmxvcmlhbsOzcG9saXM%3D"
+      ],
+      "funcionamento": {
+        "dias": "Todos os dias",
+        "horario": "Aberto 24h"
+      },
+      "endereco": {
+        "logradouro": "Av. das Rendeiras",
+        "bairro": "Lagoa da Conceição",
+        "cidade": "Florianópolis",
+        "estado": "SC",
+        "cep": "88062-400"
+      },
+      "contato": {
+        "telefone": "+55 48 99999-0004",
+        "email": "lagoa@turismo.sc.gov.br",
+        "whatsapp": "+55 48 99999-0004"
+      },
+      "possuiReserva": false,
+      "favorito": false
+    },
+    {
+      "id": 5,
+      "nome": "Praia dos Ingleses",
+      "descricao": "A Praia dos Ingleses é uma das mais populares do norte da ilha, com mar calmo em algumas áreas e ótima infraestrutura turística.",
+      "imagens": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp6ry002xQMyj0zX1NcWPX-ar01fi8BkCYyQ&s",
+        "https://visitefloripa.com.br/wp-content/uploads/elementor/thumbs/Praia-dos-Ingleses-14_SITE-qiuni7u76wgke615td82cx8tojwqodl1a58f0gbpaw.jpg"
+      ],
+      "videos": [
+        "https://www.youtube.com/watch?v=HZcJQh4UghQ&pp=ygUhcHJhaWEgZG9zIGluZ2xlc2VzIGZsb3JpYW7Ds3BvbGlz"
+      ],
+      "funcionamento": {
+        "dias": "Todos os dias",
+        "horario": "Aberto 24h"
+      },
+      "endereco": {
+        "logradouro": "Estrada Dom João Becker",
+        "bairro": "Ingleses",
+        "cidade": "Florianópolis",
+        "estado": "SC",
+        "cep": "88058-600"
+      },
+      "contato": {
+        "telefone": "+55 48 99999-0005",
+        "email": "ingleses@turismo.sc.gov.br",
+        "whatsapp": "+55 48 99999-0005"
+      },
+      "possuiReserva": false,
+      "favorito": false
+    },
+    {
+      "id": 6,
+      "nome": "Mercado Público de Florianópolis",
+      "descricao": "O Mercado Público é um dos pontos mais tradicionais da cidade, com diversas lojas, restaurantes e forte presença cultural.",
+      "imagens": [
+        "https://www.quintoandar.com.br/guias/wp-content/uploads/2023/03/GettyImages-1264482446-1-scaled.jpg",
+        "https://prefeitura.poa.br/sites/default/files/styles/horizontal_grande/http/bancodeimagens.portoalegre.rs.gov.br/sites/default/files/2021/02/27/27FEV2021_Alex%2520Rocha_Mercado_P%25C3%25BAblico_-2.jpg?itok=cE6BGcxk"
+      ],
+      "videos": [
+        "https://www.youtube.com/watch?v=z-FwCnF8nfY&pp=ygUjbWVyY2FkbyBtdW5pY2lwYWwgZGUgZmxvcmlhbsOzcG9saXM%3D"
+      ],
+      "funcionamento": {
+        "dias": "Segunda a Sábado",
+        "horario": "08:00 às 19:00"
+      },
+      "endereco": {
+        "logradouro": "R. Jerônimo Coelho",
+        "bairro": "Centro",
+        "cidade": "Florianópolis",
+        "estado": "SC",
+        "cep": "88010-030"
+      },
+      "contato": {
+        "telefone": "+55 48 3251-4700",
+        "email": "mercado@pmf.sc.gov.br",
+        "whatsapp": "+55 48 99999-0006"
+      },
+      "possuiReserva": false,
+      "favorito": false
+    },
+    {
+      "id": 7,
+      "nome": "Ilha do Campeche",
+      "descricao": "A Ilha do Campeche é famosa por suas águas cristalinas e trilhas arqueológicas, sendo um dos destinos mais preservados da região.",
+      "imagens": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbb-4fnd6ulfQLf3-PTmfPl2eAiOHTt8vlHA&s",
+        "https://www.guiaviagensbrasil.com/blog/wp-content/uploads/2017/11/piscinas-naturais-da-ilha-do-campeche-SC.jpg"
+      ],
+      "videos": [
+        "https://www.youtube.com/watch?v=aO0kUVStC4A&pp=ygUfaWxoYSBkbyBjYW1wZWNoZSBmbG9yaWFuw7Nwb2xpc9IHCQnFCgGHKiGM7w%3D%3D8"
+      ],
+      "funcionamento": {
+        "dias": "Quarta a Domingo",
+        "horario": "08:00 às 17:00"
+      },
+      "endereco": {
+        "logradouro": "Acesso via Praia do Campeche",
+        "bairro": "Campeche",
+        "cidade": "Florianópolis",
+        "estado": "SC",
+        "cep": "88063-300"
+      },
+      "contato": {
+        "telefone": "+55 48 99999-0007",
+        "email": "campeche@turismo.sc.gov.br",
+        "whatsapp": "+55 48 99999-0007"
+      },
+      "possuiReserva": true,
+      "favorito": false
+    },
+    {
+      "id": 8,
+      "nome": "Parque Municipal da Lagoa do Peri",
+      "descricao": "O Parque da Lagoa do Peri é uma área de preservação ambiental com trilhas, lagoa de água doce e espaços para lazer em meio à natureza.",
+      "imagens": [
+        "https://example.com/imagens/peri1.jpg",
+        "https://example.com/imagens/peri2.jpg"
+      ],
+      "videos": ["https://www.youtube.com/watch?v=VIDEO_ID_9"],
+      "funcionamento": {
+        "dias": "Todos os dias",
+        "horario": "06:00 às 20:00"
+      },
+      "endereco": {
+        "logradouro": "Estrada Geral da Lagoa do Peri",
+        "bairro": "Pântano do Sul",
+        "cidade": "Florianópolis",
+        "estado": "SC",
+        "cep": "88067-000"
+      },
+      "contato": {
+        "telefone": "+55 48 3237-2000",
+        "email": "peri@floripa.sc.gov.br",
+        "whatsapp": "+55 48 99999-0008"
+      },
+      "possuiReserva": false,
+      "favorito": false
+    }
+  ]
+}
