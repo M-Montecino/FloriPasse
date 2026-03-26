@@ -1,25 +1,32 @@
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { useNavigation } from "expo-router";
-import { StyleSheet, Text, View } from "react-native";
-
-const Tab = createBottomTabNavigator();
+import { ImageBackground, StyleSheet, Text, View } from "react-native";
 
 export default function Index() {
-  const navigation = useNavigation();
-
   return (
-    <View>
-      <Text>OLA!!</Text>
+    <View style={styles.container}>
+      <ImageBackground
+        source={require("@/assets/fotoPonte.jpeg")}
+        style={styles.image}
+      >
+        <Text style={styles.text}>Bem-Vindo ao FloriPasse</Text>
+      </ImageBackground>
     </View>
   );
 }
 
-function MyTabs() {
-  return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={Index} />
-    </Tab.Navigator>
-  );
-}
-
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  image: {
+    flex: 1,
+    justifyContent: "center",
+    resizeMode: "cover",
+  },
+  text: {
+    color: "white",
+    fontSize: 42,
+    lineHeight: 84,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+});
