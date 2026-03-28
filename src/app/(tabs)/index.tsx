@@ -1,7 +1,9 @@
 import { ImageBackground, StyleSheet, Text, View } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function Index() {
   return (
+    <SafeAreaProvider>
     <View style={styles.container}>
       <ImageBackground
         source={require("@/assets/fotoPonte.jpeg")}
@@ -10,6 +12,7 @@ export default function Index() {
         <Text style={styles.text}>Bem-Vindo ao FloriPasse</Text>
       </ImageBackground>
     </View>
+    </SafeAreaProvider>
   );
 }
 

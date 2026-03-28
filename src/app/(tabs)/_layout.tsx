@@ -1,7 +1,11 @@
 import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function Layout() {
+
+  const insets = useSafeAreaInsets();
+
   return (
     <Tabs
       screenOptions={{
@@ -12,7 +16,8 @@ export default function Layout() {
           backgroundColor: "#fff",
           borderTopWidth: 0,
           elevation: 5,
-          height: 60,
+          height: 60 + insets.bottom,
+          paddingBottom: insets.bottom
         },
         tabBarLabelStyle: {
           fontSize: 12,
@@ -35,6 +40,16 @@ export default function Layout() {
           title: "Atrações",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="balloon" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="passes"
+        options={{
+          title: "Passes",
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="ticket" size={size} color={color} />
           ),
         }}
       />
