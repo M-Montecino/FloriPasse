@@ -1,7 +1,7 @@
 import dados from "@/assets/dados.json";
 import { Link } from "expo-router";
 import { useEffect, useState } from "react";
-import { Image, ScrollView, Text, View } from "react-native";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 
 export default function Atracoes() {
   const [atracoes, setAtracoes] = useState<any[]>([]);
@@ -46,28 +46,11 @@ export default function Atracoes() {
           }}
           key={atracao.id}
         >
-          <View
-            style={{
-              backgroundColor: "#2ecc71",
-              padding: 20,
-              borderRadius: 20,
-            }}
-          >
-            <Text style={{ fontSize: 18, fontWeight: "bold" }}>
-              {atracao.nome}
-            </Text>
-
-            <Text>{atracao.bairro}</Text>
+          <View style={styles.view}>
+            <Text style={styles.text}>{atracao.nome}</Text>
 
             <View style={{ flexDirection: "row" }}>
-              <Image
-                source={{ uri: atracao.imagem }}
-                style={{ width: 100, height: 100 }}
-              />
-              <Image
-                source={{ uri: atracao.imagem2 }}
-                style={{ width: 100, height: 100 }}
-              />
+              <Image source={{ uri: atracao.imagem }} style={styles.image} />
             </View>
           </View>
         </Link>
@@ -75,3 +58,21 @@ export default function Atracoes() {
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  view: {
+    backgroundColor: "#90B7BF",
+    padding: 20,
+    borderRadius: 20,
+  },
+  image: {
+    width: 300,
+    height: 300,
+    borderRadius: 20,
+  },
+  text: {
+    fontSize: 30,
+    fontWeight: "bold",
+    color: "white",
+  },
+});
