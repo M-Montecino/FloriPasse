@@ -1,12 +1,15 @@
 import { useLocalSearchParams } from "expo-router";
+import React, { useState } from 'react';
 import {ScrollView, Text, View, Image, StyleSheet, Linking, Platform} from "react-native";
 import { WebView } from "react-native-webview";
 import { Button } from "@/components/Button";
+import YoutubePlayer from 'react-native-youtube-iframe';
 import dados from "@/assets/dados.json";
 
 export default function AtracaoDetalhes() {
   const { id } = useLocalSearchParams();
   const atracao = dados.atracoes.find(a => String(a.id) === String(id));
+  const [playing, setPlaying] = useState(false)
 
   if (!atracao) {
     return (
@@ -21,6 +24,7 @@ export default function AtracaoDetalhes() {
     ${atracao.endereco.cidade} - ${atracao.endereco.estado}`
   );
 
+  const video_id = atracao.videos[0].split("v=")[1]?.split("&")[0];
   const mapUrl = String(Platform.select({
       ios: `maps:0,0?q=${enderecoCompleto}`,
       android: `geo:0,0?q=${enderecoCompleto}`,
@@ -45,8 +49,21 @@ export default function AtracaoDetalhes() {
            <Image source={{ uri: atracao.imagens[1] }} style={styles.image} />
         )}
       </View>
+      <View>
+        {atracao.videos[0] && (
+            <YoutubePlayer
+              height={300}
+              width={500}
+              play={playing}
+              videoId={video_id}
+              onChangeState={(state: boolean | string ) => {
+          if (state === "ended") setPlaying(false);
+        }}>
+            </YoutubePlayer>
+          )}
+      </View>
 
-      <Text style={styles.texto}>Descrição: {atracao.descricao}</Text>
+      <Text style={styles.texto}>{atracao.descricao}</Text>
       <Button
         onPress={() => Linking.openURL(`mailto:${atracao.contato.email}`)}
         label="Enviar E-mail"
