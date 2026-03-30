@@ -215,10 +215,12 @@
       "nome": "Bingo - Parque Municipal da Lagoa do Peri",
       "descricao": "O Parque da Lagoa do Peri é uma área de preservação ambiental com trilhas, lagoa de água doce e espaços para lazer em meio à natureza. Venha participar do bingo beneficente da Igreja São Luiz!",
       "imagens": [
-        "https://example.com/imagens/peri1.jpg",
-        "https://example.com/imagens/peri2.jpg"
+        "https://destinoflorianopolis.com.br/wp-content/uploads/2016/07/Lagoa-do-Peri.jpg",
+        "https://informefloripa.com/wp-content/uploads/2025/02/peri-696x522.jpg"
       ],
-      "videos": ["https://www.youtube.com/watch?v=VIDEO_ID_9"],
+      "videos": [
+        "https://www.youtube.com/watch?v=bJl9o5--34k&pp=ygUcbGFnb2EgZG8gcGVyaSBmbG9yaWFuw7Nwb2xpcw%3D%3D"
+      ],
       "funcionamento": {
         "dias": "Todos os dias",
         "horario": "13:00 às 18:00"
