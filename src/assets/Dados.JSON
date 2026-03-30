@@ -2,8 +2,8 @@
   "atracoes": [
     {
       "id": 1,
-      "nome": "Praia da Joaquina",
-      "descricao": "A Praia da Joaquina é uma das mais famosas de Florianópolis, conhecida por suas ondas fortes, campeonatos de surf e dunas ideais para sandboard.",
+      "nome": "Aula de surf na Praia Joaquina",
+      "descricao": "A Praia da Joaquina é uma das mais famosas de Florianópolis, conhecida por suas ondas fortes, campeonatos de surf e dunas ideais para sandboard. Venha ter uma aula completa de surf com o professor Anderson Silveira!",
       "imagens": [
         "https://img.nsctotal.com.br/wp-content/uploads/2024/03/As-lendas-e-a-historia-real-da-mulher-que-da-nome-a-praia-de-Florianopolis-3.jpg",
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIQXOyih8WC7AQHFJnCurbEv939BQsQY8v7w&s"
@@ -12,8 +12,8 @@
         "https://www.youtube.com/watch?v=2g1LDLxP_YA&pp=ygUdcHJhaWEgam9hcXVpbmEgZmxvcmlhbsOzcG9saXPSBwkJxQoBhyohjO8%3D"
       ],
       "funcionamento": {
-        "dias": "Todos os dias",
-        "horario": "Aberto 24h"
+        "dias": "Sábado e Domingo",
+        "horario": "8h às 11h"
       },
       "endereco": {
         "logradouro": "Av. Pref. Acácio Garibaldi São Thiago",
@@ -62,8 +62,8 @@
     },
     {
       "id": 3,
-      "nome": "Fortaleza de São José da Ponta Grossa",
-      "descricao": "Construída no século XVIII, a fortaleza oferece uma vista incrível do mar e é um importante patrimônio histórico de Florianópolis.",
+      "nome": "Passeeio turistico na Fortaleza de São José da Ponta Grossa",
+      "descricao": "Construída no século XVIII, a fortaleza oferece uma vista incrível do mar e é um importante patrimônio histórico de Florianópolis. Venha curtir um passeio em família e conhecer essa precisidade histórica!",
       "imagens": [
         "https://fortalezas.paginas.ufsc.br/files/2011/03/ponta_grossa_vista-geral-dois.jpg",
         "https://luxuryhomefloripa.com/wp-content/uploads/2024/06/Fortaleza-Sao-Jose-da-Ponta-Grossa-1_banner.webp"
@@ -92,8 +92,8 @@
     },
     {
       "id": 4,
-      "nome": "Lagoa da Conceição",
-      "descricao": "A Lagoa da Conceição é um dos principais cartões-postais de Florianópolis, conhecida por sua beleza natural, esportes aquáticos e vida noturna animada.",
+      "nome": "Aula de volei na Lagoa da Conceição",
+      "descricao": "A Lagoa da Conceição é um dos principais cartões-postais de Florianópolis, conhecida por sua beleza natural, esportes aquáticos e vida noturna animada. Venha praticar volei com o grupo de volei Volleilha!",
       "imagens": [
         "https://ilhadamagiaonline.com.br/wp-content/uploads/2024/03/praias-perto-da-lagoa-da-conceicao.webp",
         "https://floripalanchas.com/wp-content/uploads/elementor/thumbs/lagoa-qisrgd5ghiz1we5boqjklp7rse0h8ko7zg6sdn770g.jpg"
@@ -102,8 +102,8 @@
         "https://www.youtube.com/watch?v=92VQggWLvjc&pp=ygUjbGFnb2EgZGEgY29uY2Vpw6fDo28gZmxvcmlhbsOzcG9saXM%3D"
       ],
       "funcionamento": {
-        "dias": "Todos os dias",
-        "horario": "Aberto 24h"
+        "dias": "Segunda, Quarta e Sexta",
+        "horario": "14h às 17h"
       },
       "endereco": {
         "logradouro": "Av. das Rendeiras",
@@ -122,8 +122,8 @@
     },
     {
       "id": 5,
-      "nome": "Praia dos Ingleses",
-      "descricao": "A Praia dos Ingleses é uma das mais populares do norte da ilha, com mar calmo em algumas áreas e ótima infraestrutura turística.",
+      "nome": "Trilha na Praia dos Ingleses",
+      "descricao": "A Praia dos Ingleses é uma das mais populares do norte da ilha, com mar calmo em algumas áreas e ótima infraestrutura turística. Venha conosco no passeio guiado pela trilha do Morro das Aranhas!",
       "imagens": [
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp6ry002xQMyj0zX1NcWPX-ar01fi8BkCYyQ&s",
         "https://visitefloripa.com.br/wp-content/uploads/elementor/thumbs/Praia-dos-Ingleses-14_SITE-qiuni7u76wgke615td82cx8tojwqodl1a58f0gbpaw.jpg"
@@ -132,8 +132,8 @@
         "https://www.youtube.com/watch?v=HZcJQh4UghQ&pp=ygUhcHJhaWEgZG9zIGluZ2xlc2VzIGZsb3JpYW7Ds3BvbGlz"
       ],
       "funcionamento": {
-        "dias": "Todos os dias",
-        "horario": "Aberto 24h"
+        "dias": "Sexta e Sábado",
+        "horario": "7h às 10h"
       },
       "endereco": {
         "logradouro": "Estrada Dom João Becker",
@@ -152,8 +152,8 @@
     },
     {
       "id": 6,
-      "nome": "Mercado Público de Florianópolis",
-      "descricao": "O Mercado Público é um dos pontos mais tradicionais da cidade, com diversas lojas, restaurantes e forte presença cultural.",
+      "nome": "Show de MPB no Mercado Público de Florianópolis",
+      "descricao": "O Mercado Público é um dos pontos mais tradicionais da cidade, com diversas lojas, restaurantes e forte presença cultural. Venha curtir os melhores hits do MPB!",
       "imagens": [
         "https://www.quintoandar.com.br/guias/wp-content/uploads/2023/03/GettyImages-1264482446-1-scaled.jpg",
         "https://prefeitura.poa.br/sites/default/files/styles/horizontal_grande/http/bancodeimagens.portoalegre.rs.gov.br/sites/default/files/2021/02/27/27FEV2021_Alex%2520Rocha_Mercado_P%25C3%25BAblico_-2.jpg?itok=cE6BGcxk"
@@ -163,7 +163,7 @@
       ],
       "funcionamento": {
         "dias": "Segunda a Sábado",
-        "horario": "08:00 às 19:00"
+        "horario": "10:00 às 15:00"
       },
       "endereco": {
         "logradouro": "R. Jerônimo Coelho",
@@ -182,8 +182,8 @@
     },
     {
       "id": 7,
-      "nome": "Ilha do Campeche",
-      "descricao": "A Ilha do Campeche é famosa por suas águas cristalinas e trilhas arqueológicas, sendo um dos destinos mais preservados da região.",
+      "nome": "Guia Turistico - Ilha do Campeche",
+      "descricao": "A Ilha do Campeche é famosa por suas águas cristalinas e trilhas arqueológicas, sendo um dos destinos mais preservados da região. Venha com um de nossos guias explorar esse universo magico",
       "imagens": [
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbb-4fnd6ulfQLf3-PTmfPl2eAiOHTt8vlHA&s",
         "https://www.guiaviagensbrasil.com/blog/wp-content/uploads/2017/11/piscinas-naturais-da-ilha-do-campeche-SC.jpg"
@@ -212,8 +212,8 @@
     },
     {
       "id": 8,
-      "nome": "Parque Municipal da Lagoa do Peri",
-      "descricao": "O Parque da Lagoa do Peri é uma área de preservação ambiental com trilhas, lagoa de água doce e espaços para lazer em meio à natureza.",
+      "nome": "Bingo - Parque Municipal da Lagoa do Peri",
+      "descricao": "O Parque da Lagoa do Peri é uma área de preservação ambiental com trilhas, lagoa de água doce e espaços para lazer em meio à natureza. Venha participar do bingo beneficente da Igreja São Luiz!",
       "imagens": [
         "https://example.com/imagens/peri1.jpg",
         "https://example.com/imagens/peri2.jpg"
@@ -221,7 +221,7 @@
       "videos": ["https://www.youtube.com/watch?v=VIDEO_ID_9"],
       "funcionamento": {
         "dias": "Todos os dias",
-        "horario": "06:00 às 20:00"
+        "horario": "13:00 às 18:00"
       },
       "endereco": {
         "logradouro": "Estrada Geral da Lagoa do Peri",
