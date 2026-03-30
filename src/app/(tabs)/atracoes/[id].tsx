@@ -1,15 +1,23 @@
-import { useLocalSearchParams } from "expo-router";
-import React, { useState } from 'react';
-import {ScrollView, Text, View, Image, StyleSheet, Linking, Platform} from "react-native";
-import { WebView } from "react-native-webview";
-import { Button } from "@/components/Button";
-import YoutubePlayer from 'react-native-youtube-iframe';
 import dados from "@/assets/dados.json";
+import { Button } from "@/components/Button";
+import { useLocalSearchParams } from "expo-router";
+import React, { useState } from "react";
+import {
+  Image,
+  Linking,
+  Platform,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
+import { WebView } from "react-native-webview";
+import YoutubePlayer from "react-native-youtube-iframe";
 
 export default function AtracaoDetalhes() {
   const { id } = useLocalSearchParams();
-  const atracao = dados.atracoes.find(a => String(a.id) === String(id));
-  const [playing, setPlaying] = useState(false)
+  const atracao = dados.atracoes.find((a) => String(a.id) === String(id));
+  const [playing, setPlaying] = useState(false);
 
   if (!atracao) {
     return (
@@ -21,15 +29,16 @@ export default function AtracaoDetalhes() {
   const enderecoCompleto = encodeURIComponent(`
     ${atracao.endereco.logradouro},
     ${atracao.endereco.bairro},
-    ${atracao.endereco.cidade} - ${atracao.endereco.estado}`
-  );
+    ${atracao.endereco.cidade} - ${atracao.endereco.estado}`);
 
   const video_id = atracao.videos[0].split("v=")[1]?.split("&")[0];
-  const mapUrl = String(Platform.select({
+  const mapUrl = String(
+    Platform.select({
       ios: `maps:0,0?q=${enderecoCompleto}`,
       android: `geo:0,0?q=${enderecoCompleto}`,
-      web: `https://maps.google.com/maps?q=${enderecoCompleto}`
-    }));
+      web: `https://maps.google.com/maps?q=${enderecoCompleto}`,
+    }),
+  );
 
   const urlMapa = `https://maps.google.com/maps?q=${enderecoCompleto}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
   const urlMapaWebView = `https://www.google.com/maps/search/?api=1&query=${enderecoCompleto}`;
@@ -39,28 +48,30 @@ export default function AtracaoDetalhes() {
       <Text style={styles.title}>{atracao.nome}</Text>
       <Text style={styles.subtitle}>Bairro: {atracao.endereco.bairro}</Text>
       <Text style={styles.subtitle}>Aberto: {atracao.funcionamento.dias}</Text>
-      <Text style={styles.subtitle}>Horário: {atracao.funcionamento.horario}</Text>
-      
+      <Text style={styles.subtitle}>
+        Horário: {atracao.funcionamento.horario}
+      </Text>
+
       <View style={styles.imageContainer}>
         {atracao.imagens[0] && (
-           <Image source={{ uri: atracao.imagens[0] }} style={styles.image} />
+          <Image source={{ uri: atracao.imagens[0] }} style={styles.image} />
         )}
         {atracao.imagens[1] && (
-           <Image source={{ uri: atracao.imagens[1] }} style={styles.image} />
+          <Image source={{ uri: atracao.imagens[1] }} style={styles.image} />
         )}
       </View>
       <View>
         {atracao.videos[0] && (
-            <YoutubePlayer
-              height={300}
-              width={500}
-              play={playing}
-              videoId={video_id}
-              onChangeState={(state: boolean | string ) => {
-          if (state === "ended") setPlaying(false);
-        }}>
-            </YoutubePlayer>
-          )}
+          <YoutubePlayer
+            height={300}
+            width={300}
+            play={playing}
+            videoId={video_id}
+            onChangeState={(state: boolean | string) => {
+              if (state === "ended") setPlaying(false);
+            }}
+          ></YoutubePlayer>
+        )}
       </View>
 
       <Text style={styles.texto}>{atracao.descricao}</Text>
@@ -73,33 +84,29 @@ export default function AtracaoDetalhes() {
         label={`Ligar ${atracao.contato.telefone}`}
       />
       <Button
-        onPress={() => Linking.openURL(`https://wa.me/${atracao.contato.whatsapp}`)}
+        onPress={() =>
+          Linking.openURL(`https://wa.me/${atracao.contato.whatsapp}`)
+        }
         label={`WhatsApp ${atracao.contato.whatsapp}`}
       />
-      <Button
-        onPress={() => Linking.openURL(mapUrl)}
-        label='Endereço'
-      />
+      <Button onPress={() => Linking.openURL(mapUrl)} label="Endereço" />
       <Text style={styles.mapTitle}>Localização</Text>
-        <View style={styles.mapContainer}>
-          {Platform.OS === 'web' ? (
-            <iframe 
-              src={urlMapa} 
-              style={{ border: 0, width: '100%', height: '100%' }} 
-              allowFullScreen 
-              loading="lazy" 
-            />
-          ) : (
-            <>
-              <View style={styles.mapContainer}>
-                <WebView 
-                  source={{ uri: urlMapaWebView }} 
-                  style={{ flex: 1 }} 
-                />
-              </View>
-            </>
-          )}
-        </View>
+      <View style={styles.mapContainer}>
+        {Platform.OS === "web" ? (
+          <iframe
+            src={urlMapa}
+            style={{ border: 0, width: "100%", height: "100%" }}
+            allowFullScreen
+            loading="lazy"
+          />
+        ) : (
+          <>
+            <View style={styles.mapContainer}>
+              <WebView source={{ uri: urlMapaWebView }} style={{ flex: 1 }} />
+            </View>
+          </>
+        )}
+      </View>
     </ScrollView>
   );
 }

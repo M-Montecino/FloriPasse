@@ -24,11 +24,13 @@ export default function Index() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignContent: "center",
   },
   image: {
     flex: 1,
     justifyContent: "center",
     resizeMode: "cover",
+    alignSelf: "center",
   },
   text: {
     color: "#E7DBD9",
