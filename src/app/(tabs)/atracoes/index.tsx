@@ -1,10 +1,19 @@
 import dados from "@/assets/dados.json";
-import { Link } from "expo-router";
-import { useEffect, useState } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Link, useFocusEffect } from "expo-router";
+import { useCallback, useEffect, useState } from "react";
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 
 export default function Atracoes() {
   const [atracoes, setAtracoes] = useState<any[]>([]);
+  const [favoritos, setFavoritos] = useState<string[]>([]);
+
+  useFocusEffect(
+    useCallback(() => {
+      fetchAtracoes();
+      carregarFavoritos();
+    }, []),
+  );
 
   useEffect(() => {
     fetchAtracoes();
@@ -31,30 +40,39 @@ export default function Atracoes() {
     }
   }
 
-  return (
-    <ScrollView
-      contentContainerStyle={{
-        gap: 16,
-        padding: 16,
-      }}
-    >
-      {atracoes.map((atracao) => (
-        <Link
-          href={{
-            pathname: `/atracoes/[id]`,
-            params: { id: atracao.id },
-          }}
-          key={atracao.id}
-        >
-          <View style={styles.view}>
-            <Text style={styles.text}>{atracao.nome}</Text>
+  async function carregarFavoritos() {
+    try {
+      const fav = await AsyncStorage.getItem("favoritos");
+      const lista = fav ? JSON.parse(fav) : [];
+      setFavoritos(lista);
+    } catch (e) {
+      console.log(e);
+    }
+  }
 
-            <View style={{ flexDirection: "row" }}>
+  return (
+    <ScrollView contentContainerStyle={{ gap: 16, padding: 16 }}>
+      {atracoes.map((atracao) => {
+        const isFavorito = favoritos.includes(String(atracao.id));
+
+        return (
+          <Link
+            href={{
+              pathname: `/atracoes/[id]`,
+              params: { id: atracao.id },
+            }}
+            key={atracao.id}
+          >
+            <View style={styles.view}>
+              <View style={styles.header}>
+                <Text style={styles.text}>{atracao.nome}</Text>
+              </View>
               <Image source={{ uri: atracao.imagem }} style={styles.image} />
+              <Text style={styles.heart}>{isFavorito ? "🤍" : ""}</Text>
             </View>
-          </View>
-        </Link>
-      ))}
+          </Link>
+        );
+      })}
     </ScrollView>
   );
 }
@@ -74,5 +92,13 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "bold",
     color: "white",
+  },
+  heart: {
+    fontSize: 24,
+  },
+  header: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
 });
