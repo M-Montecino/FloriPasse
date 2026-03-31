@@ -1,7 +1,8 @@
 import dados from "@/assets/dados.json";
 import { Button } from "@/components/Button";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useLocalSearchParams } from "expo-router";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Image,
   Linking,
@@ -17,8 +18,51 @@ import YoutubePlayer from "react-native-youtube-iframe";
 export default function AtracaoDetalhes() {
   const { id } = useLocalSearchParams();
   const atracao = dados.atracoes.find((a) => String(a.id) === String(id));
-  const [playing, setPlaying] = useState(false);
 
+  const [playing, setPlaying] = useState(false);
+  const [favorito, setFavorito] = useState(false);
+
+  //verificação de favorito
+  useEffect(() => {
+    verificarFavorito();
+  }, []);
+
+  async function verificarFavorito() {
+    try {
+      const favoritos = await AsyncStorage.getItem("favoritos");
+      const lista = favoritos ? JSON.parse(favoritos) : [];
+
+      if (lista.includes(String(id))) {
+        setFavorito(true);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  //função de adicionar
+  async function toggleFavorito() {
+    try {
+      const favoritos = await AsyncStorage.getItem("favoritos");
+      let lista = favoritos ? JSON.parse(favoritos) : [];
+
+      if (lista.includes(String(id))) {
+        // remove
+        lista = lista.filter((item: string) => item !== String(id));
+        setFavorito(false);
+      } else {
+        // adiciona
+        lista.push(String(id));
+        setFavorito(true);
+      }
+
+      await AsyncStorage.setItem("favoritos", JSON.stringify(lista));
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  //verificação atração
   if (!atracao) {
     return (
       <View style={styles.errorContainer}>
@@ -46,6 +90,12 @@ export default function AtracaoDetalhes() {
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
       <Text style={styles.title}>{atracao.nome}</Text>
+      <Button //botão de favorito
+        onPress={toggleFavorito}
+        label={
+          favorito ? "❤️ Remover dos Favoritos" : "🤍 Salvar nos Favoritos"
+        }
+      />
       <Text style={styles.subtitle}>Bairro: {atracao.endereco.bairro}</Text>
       <Text style={styles.subtitle}>Aberto: {atracao.funcionamento.dias}</Text>
       <Text style={styles.subtitle}>
