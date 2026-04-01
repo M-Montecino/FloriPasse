@@ -110,11 +110,10 @@ export default function AtracaoDetalhes() {
           <Image source={{ uri: atracao.imagens[1] }} style={styles.image} />
         )}
       </View>
-      <View>
+      <View style={styles.videoContainer}>
         {atracao.videos[0] && (
           <YoutubePlayer
-            height={300}
-            width={300}
+            height={220}
             play={playing}
             videoId={video_id}
             onChangeState={(state: boolean | string) => {
@@ -205,6 +204,11 @@ const styles = StyleSheet.create({
     height: 500,
     width: "100%",
     borderRadius: 15,
+    overflow: "hidden",
+  },
+  videoContainer: {
+    width: "100%",
+    borderRadius: 10,
     overflow: "hidden",
   },
 });
