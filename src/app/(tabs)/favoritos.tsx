@@ -59,12 +59,12 @@ export default function Favoritos() {
             }}
             key={atracao.id}
           >
-            <View style={styles.view}>
-              <Text style={styles.text}>{atracao.nome}</Text>
-
-              <View style={{ flexDirection: "row" }}>
+            <View style={styles.card}>
+              <View style={styles.imageWrapper}>
                 <Image source={{ uri: atracao.imagem }} style={styles.image} />
+                <Text style={styles.heart}>❤️</Text>
               </View>
+              <Text style={styles.title}>{atracao.nome}</Text>
             </View>
           </Link>
         ))
@@ -74,20 +74,42 @@ export default function Favoritos() {
 }
 
 const styles = StyleSheet.create({
-  view: {
-    backgroundColor: "#90B7BF",
-    padding: 20,
+  card: {
+    width: "100%",
+    maxWidth: 400,
+    backgroundColor: "#e094be",
     borderRadius: 20,
+    padding: 12,
+
+    //sombra
+    elevation: 5,
+    shadowColor: "#000",
+    shadowOpacity: 0.15,
+    shadowRadius: 8,
+  },
+  imageWrapper: {
+    position: "relative",
   },
   image: {
-    width: 300,
-    height: 300,
-    borderRadius: 20,
+    width: "100%",
+    height: 200,
+    borderRadius: 15,
   },
-  text: {
-    fontSize: 30,
+  title: {
+    fontSize: 18,
     fontWeight: "bold",
-    color: "white",
+    marginTop: 10,
+    textAlign: "center",
+    color: "#f0f0f0",
+  },
+  heart: {
+    position: "absolute",
+    top: 10,
+    right: 10,
+    fontSize: 24,
+    backgroundColor: "rgba(0,0,0,0.4)",
+    padding: 6,
+    borderRadius: 20,
   },
   empty: {
     textAlign: "center",

@@ -1,5 +1,11 @@
 import { Link } from "expo-router";
-import { ImageBackground, StyleSheet, Text, View } from "react-native";
+import {
+  ImageBackground,
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function Index() {
@@ -11,9 +17,9 @@ export default function Index() {
           style={styles.image}
         >
           <Link href="/atracoes" asChild>
-            <View style={styles.blockButton}>
+            <Pressable style={styles.blockButton}>
               <Text style={styles.text}>Bem-Vindo ao FloriPasse</Text>
-            </View>
+            </Pressable>
           </Link>
         </ImageBackground>
       </View>
@@ -28,18 +34,22 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: "flex-start",
     resizeMode: "cover",
-    alignSelf: "center",
   },
   text: {
     color: "#E7DBD9",
-    fontSize: 42,
-    lineHeight: 84,
+    fontSize: 28,
     fontWeight: "bold",
     textAlign: "center",
   },
   blockButton: {
     backgroundColor: "#7E1402",
+    marginBottom: "30%",
+    alignSelf: "center",
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderRadius: 12,
+    marginTop: 180,
   },
 });

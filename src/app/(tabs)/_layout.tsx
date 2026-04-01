@@ -46,7 +46,7 @@ export default function Layout() {
         name="passes"
         options={{
           title: "Passes",
-          headerShown: false,
+          headerShown: true,
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="ticket" size={size} color={color} />
           ),
@@ -56,7 +56,7 @@ export default function Layout() {
         name="favoritos"
         options={{
           title: "Favoritos",
-          headerShown: false,
+          headerShown: true,
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="heart" size={size} color={color} />
           ),

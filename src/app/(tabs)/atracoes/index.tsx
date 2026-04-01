@@ -63,12 +63,12 @@ export default function Atracoes() {
             }}
             key={atracao.id}
           >
-            <View style={styles.view}>
-              <View style={styles.header}>
-                <Text style={styles.text}>{atracao.nome}</Text>
+            <View style={styles.card}>
+              <View style={styles.imageWrapper}>
+                <Image source={{ uri: atracao.imagem }} style={styles.image} />
+                <Text style={styles.heart}>{isFavorito ? "❤️" : "🤍"}</Text>
               </View>
-              <Image source={{ uri: atracao.imagem }} style={styles.image} />
-              <Text style={styles.heart}>{isFavorito ? "🤍" : ""}</Text>
+              <Text style={styles.title}>{atracao.nome}</Text>
             </View>
           </Link>
         );
@@ -78,27 +78,41 @@ export default function Atracoes() {
 }
 
 const styles = StyleSheet.create({
-  view: {
+  card: {
+    width: "100%",
+    maxWidth: 400,
     backgroundColor: "#90B7BF",
-    padding: 20,
     borderRadius: 20,
+    padding: 12,
+
+    //sombra
+    elevation: 5,
+    shadowColor: "#000",
+    shadowOpacity: 0.15,
+    shadowRadius: 8,
+  },
+  imageWrapper: {
+    position: "relative",
   },
   image: {
-    width: 300,
-    height: 300,
-    borderRadius: 20,
+    width: "100%",
+    height: 200,
+    borderRadius: 15,
   },
-  text: {
-    fontSize: 30,
+  title: {
+    fontSize: 18,
     fontWeight: "bold",
-    color: "white",
+    marginTop: 10,
+    textAlign: "center",
+    color: "#f0f0f0",
   },
   heart: {
+    position: "absolute",
+    top: 10,
+    right: 10,
     fontSize: 24,
-  },
-  header: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
+    backgroundColor: "rgba(0,0,0,0.4)",
+    padding: 6,
+    borderRadius: 20,
   },
 });
