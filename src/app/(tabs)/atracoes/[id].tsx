@@ -122,7 +122,8 @@ export default function AtracaoDetalhes() {
       <View style={styles.videoContainer}>
         {atracao.videos[0] && (
           <YoutubePlayer
-            height={220}
+            width={300}
+            height={270}
             play={playing}
             videoId={video_id}
             onChangeState={(state: boolean | string) => {
@@ -222,7 +223,9 @@ const styles = StyleSheet.create({
   },
   videoContainer: {
     width: "100%",
+    maxWidth: 300,
+    maxHeight: 165,
     borderRadius: 10,
-    overflow: "hidden",
+    overflow:"hidden",
   },
 });
