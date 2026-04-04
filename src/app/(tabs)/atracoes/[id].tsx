@@ -22,6 +22,12 @@ export default function AtracaoDetalhes() {
   const [playing, setPlaying] = useState(false);
   const [favorito, setFavorito] = useState(false);
 
+  function abrirReserva() {
+    if (!atracao?.reservaLink) return;
+
+    Linking.openURL(atracao.reservaLink);
+  }
+
   //verificação de favorito
   useEffect(() => {
     verificarFavorito();
@@ -139,6 +145,11 @@ export default function AtracaoDetalhes() {
         label={`WhatsApp ${atracao.contato.whatsapp}`}
       />
       <Button onPress={() => Linking.openURL(mapUrl)} label="Endereço" />
+
+      {atracao?.possuiReserva && (
+        <Button onPress={abrirReserva} label="Fazer Reserva" />
+      )}
+
       <Text style={styles.mapTitle}>Localização</Text>
       <View style={styles.mapContainer}>
         {Platform.OS === "web" ? (

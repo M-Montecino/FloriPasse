@@ -58,11 +58,12 @@
         "whatsapp": "+55 48 99999-0002"
       },
       "possuiReserva": true,
+      "reservaLink": "https://site.com/reserva",
       "favorito": false
     },
     {
       "id": 3,
-      "nome": "Passeeio turistico na Fortaleza de São José da Ponta Grossa",
+      "nome": "Passeio Turistico na Fortaleza de São José da Ponta Grossa",
       "descricao": "Construída no século XVIII, a fortaleza oferece uma vista incrível do mar e é um importante patrimônio histórico de Florianópolis. Venha curtir um passeio em família e conhecer essa precisidade histórica!",
       "imagens": [
         "https://fortalezas.paginas.ufsc.br/files/2011/03/ponta_grossa_vista-geral-dois.jpg",
@@ -88,11 +89,12 @@
         "whatsapp": "+55 48 99999-0003"
       },
       "possuiReserva": true,
+      "reservaLink": "https://site.com/reserva",
       "favorito": false
     },
     {
       "id": 4,
-      "nome": "Aula de volei na Lagoa da Conceição",
+      "nome": "Aula de Volei na Lagoa da Conceição",
       "descricao": "A Lagoa da Conceição é um dos principais cartões-postais de Florianópolis, conhecida por sua beleza natural, esportes aquáticos e vida noturna animada. Venha praticar volei com o grupo de volei Volleilha!",
       "imagens": [
         "https://ilhadamagiaonline.com.br/wp-content/uploads/2024/03/praias-perto-da-lagoa-da-conceicao.webp",
@@ -208,6 +210,7 @@
         "whatsapp": "+55 48 99999-0007"
       },
       "possuiReserva": true,
+      "reservaLink": "https://site.com/reserva",
       "favorito": false
     },
     {
