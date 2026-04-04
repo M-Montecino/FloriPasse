@@ -46,7 +46,7 @@ export default function Layout() {
         name="passes"
         options={{
           title: "Passes",
-          headerShown: true,
+          headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="ticket" size={size} color={color} />
           ),
