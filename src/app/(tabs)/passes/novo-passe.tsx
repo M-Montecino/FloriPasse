@@ -44,7 +44,11 @@ export default function NovoPasse() {
   }
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView 
+      style={styles.container}
+      contentContainerStyle={styles.containerScroll}
+      nestedScrollEnabled={true}
+    >
       <Text style={styles.label}>Nome do titular do passe:</Text>
       <TextInput
         style={styles.input}
@@ -158,5 +162,9 @@ const styles = StyleSheet.create({
   },
   ouro: {
     backgroundColor: "#FFD700",
-  }
+  },
+  containerScroll: {
+    padding: 16,
+    paddingBottom: 100,
+  },
 });

@@ -1,8 +1,7 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useFocusEffect, Link } from "expo-router";
+import { Link, useFocusEffect } from "expo-router";
 import { useCallback, useState } from "react";
-import { ScrollView, StyleSheet, Text, View, TouchableOpacity, Modal, Image } from "react-native";
-import { Button } from "@/components/Button";
+import { Image, Modal, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export type Passe = {
   id: string;
@@ -34,105 +33,107 @@ export default function MeusPasses() {
   }
 
   return (
-    <ScrollView style={styles.container}>
-      <Text style={styles.titulo}>Meus Passes</Text>
+      <ScrollView 
+        style={styles.container}
+        contentContainerStyle={styles.containerScroll}>
+        <Text style={styles.titulo}>Meus Passes</Text>
 
-    <Link href="/passes/novo-passe" style={styles.botaoLink}>
-      <View style={styles.novoPasseBotao}>
-        <Text style={styles.textoBotao}>Comprar Novo Passe</Text>
-      </View>
-    </Link>
-
-      {meusPasses.length === 0 ? (
-        <Text style={styles.vazio}>Nenhum passe adquirido ainda.</Text>
-      ) : (
-        meusPasses.map((passe) => {
-          let estiloFundo = styles.fundoBronze;
-          let totais = 3;
-          let diasValidade = 3;
-
-          if (passe.tipo === "Passe Plus") {
-            estiloFundo = styles.fundoPrata;
-            totais = 5;
-            diasValidade = 5;
-          }
-          if (passe.tipo === "Passe Top") {
-            estiloFundo = styles.fundoOuro;
-            totais = 7;
-            diasValidade = 7;
-          }
-
-          const compra = new Date(passe.dataCompra);
-          const expiracao = new Date(compra.getTime() + diasValidade * 24 * 60 * 60 * 1000);
-          const agora = new Date();
-          const diffTempo = expiracao.getTime() - agora.getTime();
-          const diasRestantes = Math.ceil(diffTempo / (1000 * 60 * 60 * 24));
-
-          const disponiveis = totais;
-
-          const ativo = diasRestantes >= 0 && disponiveis > 0;
-
-          let textoValidade = "Status: Expirado";
-          if (ativo) {
-            if (diasRestantes === 0) {
-              textoValidade = "Expira hoje";
-            } else if (diasRestantes === 1) {
-              textoValidade = "Expira amanhã";
-            } else {
-              textoValidade = `Expira em: ${diasRestantes} dias`;
-            }
-          }
-
-          return (
-            <TouchableOpacity
-              key={passe.id}
-              style={[styles.cardBase, estiloFundo, !ativo && styles.cardInativo]}
-              disabled={!ativo}
-              onPress={() => setModalVisivel(true)}
-            >
-              <Text style={styles.textoDono}>{passe.dono}</Text>
-              <Text style={styles.textoTipo}>{passe.tipo}</Text>
-
-              <View style={styles.linhaDivisoria} />
-
-              <Text style={styles.textoInfo}>
-                Usos: {disponiveis} / {totais}
-              </Text>
-              
-              <Text style={styles.textoInfo}>{textoValidade}</Text>
-            </TouchableOpacity>
-          );
-        })
-      )}
-
-      <Modal visible={modalVisivel} transparent={true} animationType="fade">
-        <View style={styles.modalContainer}>
-          <View style={styles.modalConteudo}>
-            <Text style={styles.modalTitulo}>QR Code de Acesso</Text>
-            
-            <Image 
-              source={require("@/assets/place-holder.png")} 
-              style={styles.qrCode} 
-            />
-
-            <TouchableOpacity 
-              style={styles.botaoFechar} 
-              onPress={() => setModalVisivel(false)}
-            >
-              <Text style={styles.textoBotaoFechar}>Fechar</Text>
-            </TouchableOpacity>
-          </View>
+      <Link href="/passes/novo-passe" style={styles.botaoLink}>
+        <View style={styles.novoPasseBotao}>
+          <Text style={styles.textoBotao}>Comprar Novo Passe</Text>
         </View>
-      </Modal>
+      </Link>
 
-    </ScrollView>
+        {meusPasses.length === 0 ? (
+          <Text style={styles.vazio}>Nenhum passe adquirido ainda.</Text>
+        ) : (
+          meusPasses.map((passe) => {
+            let estiloFundo = styles.fundoBronze;
+            let totais = 3;
+            let diasValidade = 3;
+
+            if (passe.tipo === "Passe Plus") {
+              estiloFundo = styles.fundoPrata;
+              totais = 5;
+              diasValidade = 5;
+            }
+            if (passe.tipo === "Passe Top") {
+              estiloFundo = styles.fundoOuro;
+              totais = 7;
+              diasValidade = 7;
+            }
+
+            const compra = new Date(passe.dataCompra);
+            const expiracao = new Date(compra.getTime() + diasValidade * 24 * 60 * 60 * 1000);
+            const agora = new Date();
+            const diffTempo = expiracao.getTime() - agora.getTime();
+            const diasRestantes = Math.ceil(diffTempo / (1000 * 60 * 60 * 24));
+
+            const disponiveis = totais;
+
+            const ativo = diasRestantes >= 0 && disponiveis > 0;
+
+            let textoValidade = "Status: Expirado";
+            if (ativo) {
+              if (diasRestantes === 0) {
+                textoValidade = "Expira hoje";
+              } else if (diasRestantes === 1) {
+                textoValidade = "Expira amanhã";
+              } else {
+                textoValidade = `Expira em: ${diasRestantes} dias`;
+              }
+            }
+
+            return (
+              <TouchableOpacity
+                key={passe.id}
+                style={[styles.cardBase, estiloFundo, !ativo && styles.cardInativo]}
+                disabled={!ativo}
+                onPress={() => setModalVisivel(true)}
+              >
+                <Text style={styles.textoDono}>{passe.dono}</Text>
+                <Text style={styles.textoTipo}>{passe.tipo}</Text>
+
+                <View style={styles.linhaDivisoria} />
+
+                <Text style={styles.textoInfo}>
+                  Usos: {disponiveis} / {totais}
+                </Text>
+                
+                <Text style={styles.textoInfo}>{textoValidade}</Text>
+              </TouchableOpacity>
+            );
+          })
+        )}
+
+        <Modal visible={modalVisivel} transparent={true} animationType="fade">
+          <View style={styles.modalContainer}>
+            <View style={styles.modalConteudo}>
+              <Text style={styles.modalTitulo}>QR Code de Acesso</Text>
+              
+              <Image 
+                source={require("@/assets/place-holder.png")} 
+                style={styles.qrCode} 
+              />
+
+              <TouchableOpacity 
+                style={styles.botaoFechar} 
+                onPress={() => setModalVisivel(false)}
+              >
+                <Text style={styles.textoBotaoFechar}>Fechar</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </Modal>
+
+      </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    padding: 16,
     backgroundColor: "#FAFAFA",
+    flex: 1
   },
   titulo: {
     fontSize: 24,
@@ -253,9 +254,13 @@ const styles = StyleSheet.create({
   novoPasseBotao: {
     width: "100%",
     height: 48,
-    backgroundColor: "#90B7BF", // A cor exata do seu Button
+    backgroundColor: "#90B7BF",
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 8,
-  }
+  },
+  containerScroll: {
+    padding: 16,
+    paddingBottom: 100,
+  },
 });

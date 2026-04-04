@@ -90,11 +90,14 @@ export default function AtracaoDetalhes() {
     }),
   );
 
-  const urlMapa = `https://maps.google.com/maps?q=${enderecoCompleto}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
-  const urlMapaWebView = `https://www.google.com/maps/search/?api=1&query=${enderecoCompleto}`;
+  const urlMapa = `https://maps.google.com/maps?q=$${enderecoCompleto}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+  const urlMapaWebView = `https://www.google.com/maps/search/?api=1&query=$${enderecoCompleto}`;
 
   return (
-    <ScrollView contentContainerStyle={styles.scrollContainer}>
+    <ScrollView 
+      contentContainerStyle={styles.scrollContainer}
+      nestedScrollEnabled={true}
+    >
       <Text style={styles.title}>{atracao.nome}</Text>
       <Button //botão de favorito
         onPress={toggleFavorito}
