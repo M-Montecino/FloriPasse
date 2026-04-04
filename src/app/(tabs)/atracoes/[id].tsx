@@ -90,8 +90,8 @@ export default function AtracaoDetalhes() {
     }),
   );
 
-  const urlMapa = `https://maps.google.com/maps?q=$${enderecoCompleto}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
-  const urlMapaWebView = `https://www.google.com/maps/search/?api=1&query=$${enderecoCompleto}`;
+  const urlMapa = `https://maps.google.com/maps?q=${enderecoCompleto}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+  const urlMapaWebView = `https://www.google.com/maps/search/?api=1&query=${enderecoCompleto}`;
 
   return (
     <ScrollView 
@@ -155,7 +155,7 @@ export default function AtracaoDetalhes() {
       )}
 
       <Text style={styles.mapTitle}>Localização</Text>
-      <View style={styles.mapContainer}>
+      <View style={styles.mapContainer} pointerEvents="none">
         {Platform.OS === "web" ? (
           <iframe
             src={urlMapa}
