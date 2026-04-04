@@ -21,20 +21,27 @@ export default function MeusPasses() {
     }, [])
   );
 
-  async function carregarPasses() {
-    try {
-      const dados = await AsyncStorage.getItem("passes");
-      if (dados) {
-        setMeusPasses(JSON.parse(dados));
+  async function carregarPasses() {setTimeout(async () => {
+      try {
+        const dados = await AsyncStorage.getItem("passes");
+        if (dados) {
+          setMeusPasses(JSON.parse(dados));
+        }
+      } catch (e) {
+        console.log(e);
       }
-    } catch (e) {
-      console.log(e);
-    }
+    }, 200);
   }
 
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.titulo}>Meus Passes</Text>
+
+    <Link href="/passes/novo-passe" style={styles.botaoLink}>
+      <View style={styles.novoPasseBotao}>
+        <Text style={styles.textoBotao}>Comprar Novo Passe</Text>
+      </View>
+    </Link>
 
       {meusPasses.length === 0 ? (
         <Text style={styles.vazio}>Nenhum passe adquirido ainda.</Text>
@@ -97,10 +104,6 @@ export default function MeusPasses() {
           );
         })
       )}
-
-      <Link href="/passes/novo-passe" asChild>
-        <Button label="Novo Passe"/>
-      </Link>
 
       <Modal visible={modalVisivel} transparent={true} animationType="fade">
         <View style={styles.modalContainer}>
@@ -241,5 +244,18 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     textAlign: "center",
+  },
+  botaoLink: {
+    width: "100%",
+    marginTop: 20,
+    marginBottom: 40,
+  },
+  novoPasseBotao: {
+    width: "100%",
+    height: 48,
+    backgroundColor: "#90B7BF", // A cor exata do seu Button
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 8,
   }
 });
